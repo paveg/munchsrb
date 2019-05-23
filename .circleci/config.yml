@@ -15,6 +15,9 @@ commands:
             - v1-dependencies-{{ checksum "Gemfile" }}-{{ checksum "munchsrb.gemspec" }}
             - v1-dependencies-
       - run:
+          name: Configure Bundler
+          command: gem install bundler
+      - run:
           name: install dependencies
           command: |
             bundle install --jobs=4 --quiet --retry=3 --path vendor/bundle
