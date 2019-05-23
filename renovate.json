@@ -1,5 +1,39 @@
 {
+  "enabled": true,
   "extends": [
     "config:base"
-  ]
+  ],
+  "timezone": "Asia/Tokyo",
+  "schedule": "before 9am every weekday",
+  "prConcurrentLimit": 5,
+  "separateMultipleMajor": true,
+  "major": {
+    "automerge": false,
+    "labels": [
+      "renovate",
+      "major"
+    ]
+  },
+  "minor": {
+    "automerge": false,
+    "labels": [
+      "renovate",
+      "minor"
+    ]
+  },
+  "patch": {
+    "groupName": "all patch dependencies",
+    "automerge": true,
+    "labels": [
+      "renovate",
+      "patch"
+    ]
+  },
+  "pin": {
+    "automerge": false,
+    "labels": [
+      "renovate",
+      "pin"
+    ]
+  }
 }
