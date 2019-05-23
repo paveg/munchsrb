@@ -1,10 +1,13 @@
 Munchsrb
 ========
+
 [![MIT License](http://img.shields.io/badge/license-MIT-blue.svg?style=flat-square)][license]
 [![Renovate](https://badges.renovateapi.com/github/paveg/munchsrb)][renovate]
+[![CircleCI](https://circleci.com/gh/paveg/munchsrb.svg?style=svg&circle-token=d9adfa363e47070777441c9f94f9401b070a2a36)][circleci]
 
 [license]: https://github.com/paveg/munchsrb/blob/master/LICENSE
 [renovate]: https://github.com/renovatebot/renovate
+[circleci]: https://circleci.com/gh/paveg/munchsrb
 
 Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/munchsrb`. To experiment with that code, run `bin/console` for an interactive prompt.
 
