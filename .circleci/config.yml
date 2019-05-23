@@ -2,6 +2,7 @@ defaults: &defaults
   working_directory: ~/repo
   environment:
     - CIRCLE_ARTIFACTS: "/tmp/test-results"
+    - BUNDLER_VERSION: 2.0.1
 executors:
   default_container:
     docker:
@@ -13,6 +14,9 @@ commands:
           keys:
             - v1-dependencies-{{ checksum "Gemfile" }}-{{ checksum "munchsrb.gemspec" }}
             - v1-dependencies-
+      - run:
+          name: Configure Bundler
+          command: gem install bundler
       - run:
           name: install dependencies
           command: |
