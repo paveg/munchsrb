@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 module Munchsrb
+  # Munchsrb::Gather
   module Gather
     class << self
       attr_reader :driver
@@ -38,7 +39,16 @@ module Munchsrb
       end
 
       def arguments
-        %w[--no-sandbox --verbose --window-size=1280,800 --disable-save-password-bubble --lang=ja --disable-gpu incognito]
+        [
+          '--no-sandbox',
+          '--verbose',
+          '--window-size=1280,800',
+          '--disable-save-password-bubble',
+          '--lang=ja',
+          '--disable-gpu',
+          'incognito',
+          '--headless'
+        ]
       end
 
       def preferences

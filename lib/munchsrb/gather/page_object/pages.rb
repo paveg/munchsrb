@@ -4,38 +4,31 @@ require 'site_prism'
 module Munchsrb
   module Gather
     module PageObject
+      # IndexPage is index page of Munch's Burger.
+      class IndexPage < SitePrism::Page
+        set_url 'https://munchs.jp/index.html'
+
+        element :menu_link, 'a[href="menu.html"]'
+      end
+      # Item is Item section on Menu page of Munch's Burger.
+      class Item < SitePrism::Section
+        element :name, 'h4'
+        element :price, 'p'
+      end
+      # MenuPage is Menu page of Munch's Burger.
       class MenuPage < SitePrism::Page
-        set_url 'https://munchs.jp/menu.html'
+        set_url 'https://munchs.jsp/menu.html'
+
+        sections :menu_items, Item, 'section.menu-all div.menu-item'
+
+        def details
+          menu_items.map do |item|
+            name = item.name.text.split("\n").last
+            price = item.price.text.delete(',').match(/¥(?<price>\d+)/)[:price].to_i
+            { name: name, price: price }
+          end
+        end
       end
     end
   end
 end
-
-# MENU_PAGE = 'https://munchs.jp/menu.html'
-# MENU_ITEMS_PATH = { xpath: '//section[@class="menu-all"]//div[@class="menu-item"]' }.freeze
-# MENU_NAME_PATH = { xpath: 'h4' }.freeze
-# MENU_PRICE_PATH = { xpath: 'p' }.freeze
-#
-# module Munchsrb
-#   # Aggregator This class aggregates menu information from munch's burger.
-#   class Aggreagtor
-#     def open_page
-#       @driver.navigate.to(MENU_PAGE)
-#     end
-#
-#     def fetch_menus
-#       @driver.find_elements(MENU_ITEMS_PATH).map do |element|
-#         menu_name = element.find_element(MENU_NAME_PATH).text.split("\n").last
-#         md = element.find_element(MENU_PRICE_PATH).text.delete(',').match(/¥(?<price>\d+)/)
-#         { name: menu_name, price: md[:price].to_i }
-#       end
-#     end
-#
-#     def print_menus
-#       menus = fetch_menus
-#       menus.each do |menu|
-#         puts "name: #{menu[:name]}, price: #{menu[:price]}"
-#       end
-#     end
-#   end
-# end

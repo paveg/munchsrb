@@ -4,6 +4,7 @@ require 'munchsrb/gather/scenario'
 
 module Munchsrb
   module Gather
+    # Starter starts gather information of Munch's Burger.
     class Starter
       attr_reader :scenario
 

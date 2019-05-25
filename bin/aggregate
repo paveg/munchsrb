@@ -1,9 +1,0 @@
-# frozen_string_literal: true
-
-require 'bundler/setup'
-require 'munchsrb'
-require 'munchsrb/aggregator'
-
-ag = Munchsrb::Aggreagtor.new
-ag.open_page
-ag.print_menus

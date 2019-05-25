@@ -2,6 +2,7 @@
 
 module Munchsrb
   module Gather
+    # Munchsrb::Gather::Scenario written story page scraping.
     class Scenario
       def initialize
         @page = open
@@ -9,7 +10,13 @@ module Munchsrb
       end
 
       def execute
-        puts 'scenario'
+        @page.menu_link.click # open menu page
+        Munchsrb::Gather::PageObject::MenuPage.new.tap do |page|
+          details = page.details
+          details.each do |detail|
+            puts detail
+          end
+        end
       ensure
         quit
       end
@@ -17,7 +24,7 @@ module Munchsrb
       private
 
       def open
-        Munchsrb::Gather::PageObject::MenuPage.new.tap(&:load)
+        Munchsrb::Gather::PageObject::IndexPage.new.tap(&:load)
       end
 
       def quit
