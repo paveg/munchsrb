@@ -4,4 +4,5 @@
 require 'bundler/setup'
 require 'munchsrb'
 
-Munchsrb::Gather::Starter.new.run
+details = Munchsrb::Gather::Starter.new.run
+Munchsrb::Exporter::Sheet.new.export(details)
