@@ -15,6 +15,11 @@ module Munchsrb
 
       def run
         scenario.execute
+        @scenario.details.each do |detail|
+          print("「#{detail[:name]}」は #{detail[:price]} 円です\n")
+        end
+      rescue Munchsrb::GatherError => e
+        print("Gather Error occurred! #{e.message}\n")
       end
     end
   end

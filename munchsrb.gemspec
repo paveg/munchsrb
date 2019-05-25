@@ -41,4 +41,5 @@ Gem::Specification.new do |spec|
   spec.add_dependency 'nokogiri'
   spec.add_dependency 'selenium-webdriver', '~> 3.142'
   spec.add_dependency 'site_prism', '~> 3.2'
+  spec.add_dependency 'unicode'
 end

@@ -4,18 +4,18 @@ module Munchsrb
   module Gather
     # Munchsrb::Gather::Scenario written story page scraping.
     class Scenario
+      attr_reader :details
+
       def initialize
         @page = open
         @driver = Munchsrb::Gather.driver
+        @details = nil
       end
 
       def execute
         @page.menu_link.click # open menu page
         Munchsrb::Gather::PageObject::MenuPage.new.tap do |page|
-          details = page.details
-          details.each do |detail|
-            puts detail
-          end
+          @details = page.details
         end
       ensure
         quit

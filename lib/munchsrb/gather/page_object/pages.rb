@@ -1,6 +1,8 @@
 # frozen_string_literal: true
 
 require 'site_prism'
+require 'unicode'
+
 module Munchsrb
   module Gather
     module PageObject
@@ -23,7 +25,7 @@ module Munchsrb
 
         def details
           menu_items.map do |item|
-            name = item.name.text.split("\n").last
+            name = Unicode.nfkc(item.name.text.split("\n").last)
             price = item.price.text.delete(',').match(/¥(?<price>\d+)/)[:price].to_i
             { name: name, price: price }
           end

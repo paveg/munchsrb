@@ -14,4 +14,7 @@ require 'munchsrb/gather/page_object/pages'
 module Munchsrb
   class Error < StandardError
   end
+  # GatherError is occurred in gathering.
+  class GatherError < StandardError
+  end
 end
