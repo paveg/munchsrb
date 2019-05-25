@@ -12,7 +12,7 @@ commands:
     steps:
       - restore_cache:
           keys:
-            - v1-dependencies-{{ checksum "Gemfile" }}-{{ checksum "munchsrb.gemspec" }}
+            - v1-dependencies-{{ checksum "munchsrb.gemspec" }}
             - v1-dependencies-
       - run:
           name: Configure Bundler
@@ -24,7 +24,7 @@ commands:
       - save_cache:
           paths:
             - ./vendor/bundle
-          key: v1-dependencies-{{ checksum "Gemfile" }}-{{ checksum "munchsrb.gemspec" }}
+          key: v1-dependencies-{{ checksum "munchsrb.gemspec" }}
       - persist_to_workspace:
           root: .
           paths:
