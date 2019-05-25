@@ -5,10 +5,8 @@ require 'munchsrb'
 require 'simplecov'
 
 # Set up SimpleCov
-if ENV['TEST_RESULTS']
-  SimpleCov.coverage_dir(File.join(ENV['TEST_RESULTS'], 'coverage'))
-end
-SimpleCov.start { %w[vendor/ spec/].each {|dir| add_filter(dir) } }
+SimpleCov.coverage_dir(File.join(ENV['TEST_RESULTS'], 'coverage')) if ENV['TEST_RESULTS']
+SimpleCov.start { %w[vendor/ spec/].each { |dir| add_filter(dir) } }
 
 if ENV['CI']
   require 'codecov'
