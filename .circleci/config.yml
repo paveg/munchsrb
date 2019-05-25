@@ -54,10 +54,8 @@ jobs:
                             --format RspecJunitFormatter \
                             --out $CIRCLE_ARTIFACTS/rspec.xml \
                             $TEST_FILES
-      - run:
-          name: Upload coverage
-          when: on_success
-          command: bash <(curl -fs https://codecov.io/bash) -t ${CODECOV_TOKEN}
+          after_success:
+            - command: bash <(curl -fs https://codecov.io/bash) -t ${CODECOV_TOKEN}
       - store_test_results:
           path: ${CIRCLE_ARTIFACTS}
       - store_artifacts:
