@@ -3,6 +3,7 @@
 module Munchsrb
   # Munchsrb::Gather
   module Gather
+    DEFAULT_MAX_WAIT_TIME = 2
     class << self
       attr_reader :driver
 
@@ -15,7 +16,7 @@ module Munchsrb
           config.run_server = false
           config.default_driver = :chrome
           config.javascript_driver = :chrome
-          config.default_max_wait_time = 2
+          config.default_max_wait_time = DEFAULT_MAX_WAIT_TIME
         end
       end
 
