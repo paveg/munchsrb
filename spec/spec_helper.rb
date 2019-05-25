@@ -5,7 +5,6 @@ require 'munchsrb'
 require 'simplecov'
 
 # Set up SimpleCov
-SimpleCov.coverage_dir(File.join(ENV['CIRCLE_ARTIFACTS'], 'coverage')) if ENV['CIRCLE_ARTIFACTS']
 SimpleCov.start { %w[vendor/ spec/].each { |dir| add_filter(dir) } }
 
 if ENV['CI']
