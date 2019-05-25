@@ -6,7 +6,7 @@ require 'simplecov'
 require 'pry'
 
 # Set up SimpleCov
-SimpleCov.start { %w[vendor/ spec/].each { |dir| add_filter(dir) } }
+SimpleCov.start
 
 if ENV['CI']
   require 'codecov'
