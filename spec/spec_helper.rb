@@ -2,6 +2,18 @@
 
 require 'bundler/setup'
 require 'munchsrb'
+require 'simplecov'
+
+# Set up SimpleCov
+if ENV['TEST_RESULTS']
+  SimpleCov.coverage_dir(File.join(ENV['TEST_RESULTS'], 'coverage'))
+end
+SimpleCov.start { %w[vendor/ spec/].each {|dir| add_filter(dir) } }
+
+if ENV['CI']
+  require 'codecov'
+  SimpleCov.formatter = SimpleCov::Formatter::Codecov
+end
 
 RSpec.configure do |config|
   # Enable flags like --only-failures and --next-failure
@@ -12,5 +24,13 @@ RSpec.configure do |config|
 
   config.expect_with :rspec do |c|
     c.syntax = :expect
+    config.expect_with :rspec do |expectations|
+      expectations.warn_about_potential_false_positives = false
+    end
+    config.define_derived_metadata do |meta|
+      meta[:aggregate_failures] = true unless meta.key?(:aggregate_failures)
+    end
+    config.raise_errors_for_deprecations!
+    config.color = true
   end
 end
