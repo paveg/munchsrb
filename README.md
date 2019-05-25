@@ -11,9 +11,7 @@ Munchsrb
 [circleci]: https://circleci.com/gh/paveg/munchsrb
 [codecov]: https://codecov.io/gh/paveg/munchsrb
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/munchsrb`. To experiment with that code, run `bin/console` for an interactive prompt.
-
-TODO: Delete this and the text above, and describe your gem
+Munchsrb is rubygem for those who love Munch's Burger! 
 
 ## Installation
 
@@ -33,7 +31,17 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+    # Please, set your google client key and spread sheet key. 
+    $ bin/gather
+
+### Environment
+
+|key|value|
+|:---:|:---:|
+| `GOOGLE_CLIENT` | your google client id |
+| `GOOGLE_CLIENT_SECRET` | your google client secret |
+| `GOOGLE_REFRESH_TOKEN` | your google refresh token |
+| `GOOGLE_SPREAD_SHEET_KEY` | your destination Google Spread Sheet Key |
 
 ## Development
 
@@ -43,7 +51,9 @@ To install this gem onto your local machine, run `bundle exec rake install`. To 
 
 ## Contributing
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/[USERNAME]/munchsrb. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [Contributor Covenant](http://contributor-covenant.org) code of conduct.
+Bug reports and pull requests are welcome on GitHub at https://github.com/paveg/munchsrb.
+ 
+ This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [Contributor Covenant](http://contributor-covenant.org) code of conduct.
 
 ## License
 
