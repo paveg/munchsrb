@@ -41,6 +41,7 @@ Gem::Specification.new do |spec|
   spec.add_dependency 'google-api-client'
   spec.add_dependency 'google_drive'
   spec.add_dependency 'nokogiri'
+  spec.add_dependency 'pdf-reader'
   spec.add_dependency 'selenium-webdriver', '~> 3.142'
   spec.add_dependency 'site_prism', '~> 3.2'
   spec.add_dependency 'unicode'
