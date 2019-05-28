@@ -1,6 +1,7 @@
 Munchsrb
 ========
 
+[![Gem Version](https://badge.fury.io/rb/munchsrb.svg)][rubygem]
 [![MIT License](http://img.shields.io/badge/license-MIT-blue.svg?style=flat-square)][license]
 [![Renovate](https://badges.renovateapi.com/github/paveg/munchsrb)][renovate]
 [![CircleCI](https://circleci.com/gh/paveg/munchsrb.svg?style=svg&circle-token=d9adfa363e47070777441c9f94f9401b070a2a36)][circleci]
@@ -10,6 +11,7 @@ Munchsrb
 [renovate]: https://github.com/renovatebot/renovate
 [circleci]: https://circleci.com/gh/paveg/munchsrb
 [codecov]: https://codecov.io/gh/paveg/munchsrb
+[rubygem]: https://badge.fury.io/rb/munchsrb
 
 Munchsrb is rubygem for those who love Munch's Burger! 
 
