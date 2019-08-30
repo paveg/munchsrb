@@ -11,13 +11,14 @@ module Munchsrb
         set_url 'https://munchs.jp/index.html'
 
         element :menu_link, 'a[href="menu.html"]'
+        element :delivery_link, 'a[href="delivery.html"]'
       end
-      # Item is Item section on Menu page of Munch's Burger.
+      # Item is Item section on menu page of Munch's Burger.
       class Item < SitePrism::Section
         element :name, 'h4'
         element :price, 'p'
       end
-      # MenuPage is Menu page of Munch's Burger.
+      # MenuPage is menu page of Munch's Burger.
       class MenuPage < SitePrism::Page
         set_url 'https://munchs.jsp/menu.html'
 
@@ -30,6 +31,10 @@ module Munchsrb
             { name: name, price: price }
           end
         end
+      end
+      # DeliveryMenuPage is Delivery menu page of Munch's Burger.
+      class DeliveryMenu < SitePrism::Page
+        set_url 'https://munchs.jp/pdf/delivery-menu8.pdf'
       end
     end
   end
